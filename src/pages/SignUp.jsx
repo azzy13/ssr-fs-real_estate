@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -51,7 +52,7 @@ export default function SignUp() {
 
       navigate('/');
     } catch (error) {
-      console.log(error);
+      toast.error('Oops, Something went wrong.');
     }
   };
 
